@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>My Website</title>
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="icon" href="./favicon.ico" type="image/x-icon">
+  </head>
+  <body>
+    <main>
+        <section class="section section-products">
+          <div id="tickets" class="tickets">
+            <form class="tickets_form" onsubmit="submitForm(event)">
+              <select name="day" id="tickets_date-select"></select>
+              <select name="time" id="tickets_time-select">
+                <option>10</option>
+                <option>12</option>
+                <option>14</option>
+                <option>16</option>
+                <option>18</option>
+              </select>
+              <button class="tickets_form_btn">Find</button>
+            </form>
+            <div class="tickets_available-movies"></div>
+            <div id="tickets-pop-up" class="tickets-pop-up hidden">
+              <div id="tickets-pop-up_seats" class="tickets-pop-up_seats">
+                
+              </div>
+              <p id="tickets-pop-up_error" class="tickets-pop-up_error hidden">Choose 1-4 tickets</p>
+              <div class="tickets-pop-up_btn-container">
+                <button id="buy-tickets-btn" class="tickets-pop-up_btn" type="button" onclick="buyTickets(event)">
+                  Buy tickets
+                </button>
+                <button class="tickets-pop-up_btn"type="button" onclick="closeTicketsPopup()">
+                  Cancel
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+    </main>
+	<script src="index.js"></script>
+  </body>
+</html>

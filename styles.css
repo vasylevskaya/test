@@ -1,0 +1,132 @@
+body {
+ color: white;
+ background: black;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.tickets_form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 30px 20px 20px;
+}
+
+@media screen and (max-width: 700px) {
+  .tickets_form {
+    display: flex;
+    flex-direction:column;
+    gap: 20px;
+  }
+}
+
+.tickets_form select {
+  padding: 10px;
+  width: 200px;
+  height: 40px;
+}
+
+.tickets_form_btn {
+  width: 200px;
+  height: 40px;
+}
+
+.tickets_available-movies {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 30px 20px;
+}
+
+.tickets_available-movies_movie {
+  cursor: pointer;
+}
+
+.tickets_available-movies_movie_name {
+  text-align: center;
+}
+
+.tickets_available-movies_movie_img {
+  width: 240px;
+  height: 350px;
+  object-fit: cover;
+}
+
+.tickets-pop-up {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 50;
+  width: 100vw;
+  height: 100vh;
+  background: #121212;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.tickets-pop-up_seats {
+  display: grid;
+  grid-template-columns: repeat(5, 40px);
+  grid-gap: 5px;
+  width: fit-content;
+  margin: 30px auto;
+}
+
+.tickets-pop-up_seats_input[type=checkbox] {
+  display: none;
+  visibility: hidden;
+}
+
+.tickets-pop-up_seats_label {
+  text-align: center;
+  padding: 5px;
+  background: grey;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 400ms;
+}
+
+.tickets-pop-up_seats_input:checked + .tickets-pop-up_seats_label {
+  background: #1b751b;
+}
+
+.tickets-pop-up_seats_input:disabled + .tickets-pop-up_seats_label {
+  background: #e72f2f;
+  cursor: not-allowed;
+}
+
+.tickets-pop-up_seats_input:not(:disabled) + .tickets-pop-up_seats_label:hover {
+  background: #2d932d;
+}
+
+.tickets-pop-up_btn-container {
+  display: grid;
+  grid-template-columns: repeat(2, 200px);
+  grid-gap: 20px;
+}
+
+@media screen and (max-width: 700px) {
+  .tickets-pop-up_btn-container {
+    display: flex;
+    flex-direction:column;
+    gap: 20px;
+  }
+}
+
+.tickets-pop-up_btn {
+  cursor: pointer;
+  min-width: 200px;
+  height: 40px;
+}
+
+.tickets-pop-up_error {
+  color: red;
+  text-align: center;
+  display: inline-block;
+}
